@@ -9,7 +9,14 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     coderay (1.0.9)
+    colorize (0.5.8)
     columnize (0.3.6)
+    coveralls (0.6.7)
+      colorize
+      multi_json (~> 1.3)
+      rest-client
+      simplecov (>= 0.7)
+      thor
     debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -36,6 +43,7 @@ GEM
     log_switch (0.4.0)
     lumberjack (1.0.4)
     method_source (0.8.1)
+    mime-types (1.23)
     multi_json (1.7.7)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -52,6 +60,8 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -80,6 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coveralls
   docuvator!
   guard-rspec
   pry-debugger
