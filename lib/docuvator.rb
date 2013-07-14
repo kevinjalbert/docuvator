@@ -20,9 +20,6 @@ module Docuvator
     def parse_options
       OptionParser.new do |opt|
         opt.version = VERSION
-        opt.on "-v", "--verbose", "Verbose output (shows INFO level log statements)" do
-          options.verbose = true
-        end
         opt.on "-d", "--debug", "Debug output (shows DEBUG level log statements)" do
           options.debug = true
         end
@@ -35,7 +32,7 @@ module Docuvator
       if options.debug
         Log.level = Logger::DEBUG
         Log.use_debug
-      elsif options.verbose
+      else
         Log.level = Logger::INFO
       end
     end
