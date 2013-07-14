@@ -45,7 +45,6 @@ Regex to split up sentences - http://stackoverflow.com/a/5844564/583592
       @paragraphs = File.open(@file).read.split(REGEX_NEWLINE).map { |s|
         s = s.gsub(REGEX_SPACES, ' ').strip
       }
-      Log.info "Number of paragraphs: #{@paragraphs.size}"
 
       # Split up paragraphs into sentences
       @sentences = []
@@ -54,7 +53,6 @@ Regex to split up sentences - http://stackoverflow.com/a/5844564/583592
           @sentences << sentence
         end
       end
-      Log.info "Number of sentences: #{@sentences.size}"
 
       @word_frequency = Hash.new(0)
       @sentences.each do |sentence|
@@ -64,7 +62,6 @@ Regex to split up sentences - http://stackoverflow.com/a/5844564/583592
           s
         }
       end
-      Log.info "Unique words: #{@word_frequency.size}"
     end
   end
 end

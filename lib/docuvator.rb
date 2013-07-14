@@ -14,7 +14,20 @@ module Docuvator
 
     def process(file)
       Log.info "Processing #{file}"
-      Splitter.new(file).split
+      splitter = Splitter.new(file)
+      splitter.split
+
+      paragraph_analyzer = ParagraphAnalyzer.new(splitter.paragraphs, splitter.sentences, splitter.word_frequency)
+      paragraph_analyzer.analyze
+      paragraph_analyzer.results
+
+      sentence_analyzer = SentenceAnalyzer.new(splitter.paragraphs, splitter.sentences, splitter.word_frequency)
+      sentence_analyzer.analyze
+      sentence_analyzer.results
+
+      word_analyzer = WordAnalyzer.new(splitter.paragraphs, splitter.sentences, splitter.word_frequency)
+      word_analyzer.analyze
+      word_analyzer.results
     end
 
     def parse_options
