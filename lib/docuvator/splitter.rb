@@ -29,7 +29,6 @@ Regex to split up sentences - http://stackoverflow.com/a/5844564/583592
 )                   # End negative lookbehind.
 \s+                 # Split on whitespace between sentences.
 /ix
-
 =end
 
     def initialize(file)

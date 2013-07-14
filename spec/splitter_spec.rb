@@ -19,29 +19,29 @@ describe Splitter do
   describe "#split" do
     context "valid file" do
       let(:file) { fixture('lorem_ipsum.txt') }
-      let(:splitter) {
+      let(:split) {
         splitter = Splitter.new(file)
         splitter.split
         splitter
       }
 
-      it { splitter.paragraphs.size.should eq 3 }
-      it { splitter.sentences.size.should eq 39 }
-      it { splitter.word_frequency.size.should eq 124 }
+      it { split.paragraphs.size.should eq 3 }
+      it { split.sentences.size.should eq 39 }
+      it { split.word_frequency.size.should eq 124 }
     end
 
     context "valid file (idempotence)" do
       let(:file) { fixture('lorem_ipsum.txt') }
-      let(:splitter) {
+      let(:split) {
         splitter = Splitter.new(file)
         splitter.split
         splitter.split
         splitter
       }
 
-      it { splitter.paragraphs.size.should eq 3 }
-      it { splitter.sentences.size.should eq 39 }
-      it { splitter.word_frequency.size.should eq 124 }
+      it { split.paragraphs.size.should eq 3 }
+      it { split.sentences.size.should eq 39 }
+      it { split.word_frequency.size.should eq 124 }
     end
   end
 end
