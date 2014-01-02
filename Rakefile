@@ -21,4 +21,14 @@ task :run, :file do |t, args|
   Docuvator::CLI.new.process(args[:file])
 end
 
+desc "Install treat language"
+task :language, :language do |t, args|
+  require 'treat'
+  if args[:language].nil?
+    Treat::Core::Installer.install 'travis'
+  else
+    Treat::Core::Installer.install args[:language].to_s
+  end
+end
+
 task :default => :spec

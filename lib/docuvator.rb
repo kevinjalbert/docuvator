@@ -15,17 +15,17 @@ module Docuvator
     def process(file)
       Log.info "Processing #{file}"
       splitter = Splitter.new(file)
-      splitter.split
+      data = splitter.split
 
-      paragraph_analyzer = ParagraphAnalyzer.new(splitter.paragraphs, splitter.sentences, splitter.word_frequency)
+      paragraph_analyzer = ParagraphAnalyzer.new(data)
       paragraph_analyzer.analyze
       paragraph_analyzer.results
 
-      sentence_analyzer = SentenceAnalyzer.new(splitter.paragraphs, splitter.sentences, splitter.word_frequency)
+      sentence_analyzer = SentenceAnalyzer.new(data)
       sentence_analyzer.analyze
       sentence_analyzer.results
 
-      word_analyzer = WordAnalyzer.new(splitter.paragraphs, splitter.sentences, splitter.word_frequency)
+      word_analyzer = WordAnalyzer.new(data)
       word_analyzer.analyze
       word_analyzer.results
     end

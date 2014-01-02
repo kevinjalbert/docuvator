@@ -1,11 +1,9 @@
 module Docuvator
   class SentenceAnalyzer
-    attr_accessor :paragraphs, :sentences, :word_frequency
+    attr_reader :data
 
-    def initialize(paragraphs, sentences, word_frequency)
-      @paragraphs = paragraphs
-      @sentences = sentences
-      @word_frequency = word_frequency
+    def initialize(data)
+      @data = data
     end
 
     def analyze
@@ -15,7 +13,7 @@ module Docuvator
     def results
       Log.info
       Log.info "::Sentence Analyzer::"
-      Log.info "Number of sentences: #{@sentences.size}"
+      Log.info "Number of sentences: #{@data.sentences.size}"
     end
   end
 end

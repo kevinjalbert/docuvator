@@ -17,3 +17,8 @@ group :darwin do
   gem "rb-fsevent"
   gem "terminal-notifier-guard"
 end
+
+gem "rake"
+gem "treat"
+gem "scalpel" # For treat's segment
+gem "engtagger" # For treat's category

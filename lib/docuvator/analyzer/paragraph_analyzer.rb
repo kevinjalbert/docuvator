@@ -1,11 +1,9 @@
 module Docuvator
   class ParagraphAnalyzer
-    attr_accessor :paragraphs, :sentences, :word_frequency
+    attr_reader :data
 
-    def initialize(paragraphs, sentences, word_frequency)
-      @paragraphs = paragraphs
-      @sentences = sentences
-      @word_frequency = word_frequency
+    def initialize(data)
+      @data = data
     end
 
     def analyze
@@ -15,7 +13,7 @@ module Docuvator
     def results
       Log.info
       Log.info "::Paragraph Analyzer::"
-      Log.info "Number of paragraphs: #{@paragraphs.size}"
+      Log.info "Number of paragraphs: #{@data.paragraphs.size}"
     end
   end
 end

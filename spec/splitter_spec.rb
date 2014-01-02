@@ -22,12 +22,11 @@ describe Splitter do
       let(:split) {
         splitter = Splitter.new(file)
         splitter.split
-        splitter
       }
 
       it { split.paragraphs.size.should eq 3 }
-      it { split.sentences.size.should eq 39 }
-      it { split.word_frequency.size.should eq 124 }
+      it { split.sentences.size.should eq 41 }
+      it { split.words.size.should eq 343 }
     end
 
     context "valid file (idempotence)" do
@@ -36,12 +35,11 @@ describe Splitter do
         splitter = Splitter.new(file)
         splitter.split
         splitter.split
-        splitter
       }
 
       it { split.paragraphs.size.should eq 3 }
-      it { split.sentences.size.should eq 39 }
-      it { split.word_frequency.size.should eq 124 }
+      it { split.sentences.size.should eq 41 }
+      it { split.words.size.should eq 343 }
     end
   end
 end
