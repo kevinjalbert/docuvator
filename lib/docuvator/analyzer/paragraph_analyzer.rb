@@ -1,5 +1,5 @@
 module Docuvator
-  class ParagraphAnalyzer
+  class ParagraphAnalyzer < Analyzer
     attr_reader :data
 
     def initialize(data)
@@ -11,8 +11,6 @@ module Docuvator
     end
 
     def results
-      Log.info
-      Log.info "::Paragraph Analyzer::"
       Log.info "Number of paragraphs: #{@data.paragraphs.size}"
     end
   end

@@ -1,5 +1,5 @@
 module Docuvator
-  class SentenceAnalyzer
+  class SentenceAnalyzer < Analyzer
     attr_reader :data
 
     def initialize(data)
@@ -11,8 +11,6 @@ module Docuvator
     end
 
     def results
-      Log.info
-      Log.info "::Sentence Analyzer::"
       Log.info "Number of sentences: #{@data.sentences.size}"
     end
   end

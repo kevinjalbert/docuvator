@@ -17,17 +17,14 @@ module Docuvator
       splitter = Splitter.new(file)
       data = splitter.split
 
-      paragraph_analyzer = ParagraphAnalyzer.new(data)
-      paragraph_analyzer.analyze
-      paragraph_analyzer.results
+      Analyzer.descendants.each do | analyzer_class|
+        analyzer = analyzer_class.new(data)
+        analyzer.analyze
 
-      sentence_analyzer = SentenceAnalyzer.new(data)
-      sentence_analyzer.analyze
-      sentence_analyzer.results
-
-      word_analyzer = WordAnalyzer.new(data)
-      word_analyzer.analyze
-      word_analyzer.results
+        Log.info ""
+        Log.info "::#{analyzer_class}::"
+        analyzer.results
+      end
     end
 
     def parse_options

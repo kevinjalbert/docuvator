@@ -1,5 +1,5 @@
 module Docuvator
-  class WordAnalyzer
+  class WordAnalyzer < Analyzer
     attr_reader :data
     attr_accessor :total_words, :total_characters, :average_characters_per_word
 
@@ -20,8 +20,6 @@ module Docuvator
     end
 
     def results
-      Log.info
-      Log.info "::Word Analyzer::"
       Log.info "Unique words: #{@word_frequency.size}"
       Log.info "Total words: #{@data.words.size}"
       Log.info "Total characters (excluding spaces): #{@total_characters}"
