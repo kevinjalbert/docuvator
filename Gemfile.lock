@@ -122,6 +122,7 @@ DEPENDENCIES
   docuvator!
   engtagger
   guard-rspec
+  nokogiri
   pry-debugger
   pry-stack_explorer
   rake

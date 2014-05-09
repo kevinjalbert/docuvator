@@ -20,5 +20,6 @@ end
 
 gem "rake"
 gem "treat"
+gem "nokogiri"
 gem "scalpel" # For treat's segment
 gem "engtagger" # For treat's category
