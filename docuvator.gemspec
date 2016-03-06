@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
   gem.version       = Docuvator::VERSION
   gem.summary       = "Gem which extracts document statistics and information"
   gem.description   = "Gem which extracts document statistics and information"
+  gem.license       = 'MIT'
   gem.require_paths = ["lib"]
   gem.files         = Dir['lib/**/*']
   gem.test_files    = Dir['spec/**/*_spec.rb']
